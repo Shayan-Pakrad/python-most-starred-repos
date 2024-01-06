@@ -51,11 +51,28 @@ fig = px.bar(x=repo_links, y=stars, title=title, labels=labels, hover_name=hover
 
 # Customize the layout of the plot
 fig.update_layout(
-    title_font_size=28, xaxis_title_font_size=20, yaxis_title_font_size=20
+    title_font_size=28,
+    xaxis_title_font_size=20,
+    yaxis_title_font_size=20,
+    plot_bgcolor="rgba(0,0,0,0)",
+    paper_bgcolor="rgba(0,0,0,0)",
+    xaxis=dict(
+        showgrid=True,
+        gridcolor="LightGray",
+        gridwidth=0.5
+    ),
+    yaxis=dict(
+        showgrid=True,
+        gridcolor="LightGray",
+        gridwidth=0.5
+    )
 )
 
 # Customize the appearance of the bars in the plot
-fig.update_traces(marker_color="SteelBlue", marker_opacity=0.8)
+fig.update_traces(marker_color="#3498db", marker_line_color="black", marker_line_width=1, opacity=0.8)
+
+# Update the font style
+fig.update_layout(font=dict(family="Arial, sans-serif", size=12, color="RebeccaPurple"))
 
 # Show the plot
 fig.show()
